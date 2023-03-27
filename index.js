@@ -14,7 +14,42 @@ const questions = [
         name: "description",
         message: "Enter a brief description for your project:",
     },
-
+    {
+        type: "input",
+        name: "table-of-contents",
+        message: "List section names for your project and its Table of Contents:",
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "Provide installation instructions for your project:",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Provide usage instructions for your project:",
+    },
+    {
+        type: "input",
+        name: "license",
+        message: "Enter license information for your project:",
+    },
+    {
+        type: "input",
+        name: "contributing",
+        message: "Provide information on how others may contribute to the project:",
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "Enter any tests you've run on your project:",
+    },
+    {
+        type: "input",
+        name: "questions",
+        message: "List section names for your project's Table of Contents:",
+    },
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -25,6 +60,17 @@ function writeToFile(fileName, data) {
     
     # ${data["description"]}
 
+    # ${data["table-of-contents"]}
+
+    # ${data["installation"]}
+
+    # ${data["usage"]}
+
+    # ${data["contributing"]}
+
+    # ${data["tests"]}
+
+    # ${data["questions"]}
 
     `;
     
