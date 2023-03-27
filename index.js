@@ -6,14 +6,28 @@ const inquirer = require("inquirer");
 const questions = [
     {
     type: "input",
-    name: "project-title",
+    name: "title",
     message: "Enter a title for your project:",
-    }
-];
+    },
+    {
+        type: "input",
+        name: "description",
+        message: "Enter a brief description for your project:",
+    },
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    const readme = `# ${data["project-title"]}`;
+    
+    const readme = `
+    
+    # ${data["title"]}
+    
+    # ${data["description"]}
+
+
+    `;
+    
     fs.writeFile(fileName, readme, (err) => {
         if (err) {
             console.log(err);
