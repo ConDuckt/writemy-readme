@@ -54,7 +54,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     
-    const readme = `
+const readme = `
 
 # ${data["title"]}
 
@@ -95,7 +95,7 @@ ${data["license"]}
 
 Alternatively, you may reach me at ${data["questions"]}.
 
-    `;
+`;
     
     fs.writeFile(fileName, readme, (err) => {
         if (err) {
