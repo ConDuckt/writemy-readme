@@ -16,11 +16,6 @@ const questions = [
     },
     {
         type: "input",
-        name: "table-of-contents",
-        message: "List section names for your project and its Table of Contents:",
-    },
-    {
-        type: "input",
         name: "installation",
         message: "Provide installation instructions for your project:",
     },
@@ -28,11 +23,6 @@ const questions = [
         type: "input",
         name: "usage",
         message: "Provide usage instructions for your project:",
-    },
-    {
-        type: "input",
-        name: "license",
-        message: "Enter license information for your project:",
     },
     {
         type: "input",
@@ -47,7 +37,12 @@ const questions = [
     {
         type: "input",
         name: "questions",
-        message: "List section names for your project's Table of Contents:",
+        message: "Enter an email contact for questions a user may have:",
+    },
+    {
+        type: "input",
+        name: "license",
+        message: "Enter license information for your project:",
     },
 ];
 
@@ -55,22 +50,46 @@ const questions = [
 function writeToFile(fileName, data) {
     
     const readme = `
-    
-    # ${data["title"]}
-    
-    # ${data["description"]}
 
-    # ${data["table-of-contents"]}
+# ${data["title"]}
 
-    # ${data["installation"]}
+${data["description"]}
 
-    # ${data["usage"]}
+## Table of Contents
 
-    # ${data["contributing"]}
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [License](#license)
+* [Questions](#questions)
 
-    # ${data["tests"]}
+## Installation
 
-    # ${data["questions"]}
+${data["installation"]}
+
+## Usage
+
+${data["usage"]}
+
+## Contributing
+
+${data["contributing"]}
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+## Tests
+
+${data["tests"]}
+
+## License
+
+${data["license"]}
+
+## Questions
+
+${data["questions"]}
 
     `;
     
@@ -101,6 +120,7 @@ init();
 // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
 // WHEN I choose a license for my application from a list of options
 // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+// 
 // WHEN I enter my GitHub username
 // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
 // WHEN I enter my email address
